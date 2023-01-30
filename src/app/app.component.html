@@ -1,2 +1,21 @@
-<app-text-box></app-text-box>
-<app-saved-notes></app-saved-notes>
+<app-text-box (emit_note)="catch_note($event)"></app-text-box>
+<!-- <button btn btn-secondary (click)="reveal()"> List here</button> -->
+<app-saved-notes  [received_array]="note_array"></app-saved-notes>
+<ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

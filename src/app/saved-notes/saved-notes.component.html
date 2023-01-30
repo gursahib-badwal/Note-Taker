@@ -1,1 +1,13 @@
-<p>Second component says hi!</p>
+<!-- <p>Second component says hi!</p> -->
+<ul>
+    <li *ngFor="let note of received_array">
+        <button btn btn-secondary (click)="more_info(note)">{{note.heading}}</button>
+    </li>
+</ul>
+
+
+
+<div id="more-info">
+<p>Heading: {{fake_heading}}</p>
+<p>Text: {{fake_text}}</p>
+</div>

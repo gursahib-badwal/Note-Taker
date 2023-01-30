@@ -1,3 +1,4 @@
+import { note } from './note';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'first-assignment';
+
+  note_array:note[] = [
+    // {heading: "Gursahib", text: "My name is Gursahib Singh"}
+  ];
+
+  catch_note(Note:note){
+    // console.log("Note catched");
+    // console.log(Note);
+    this.note_array.push(Note);
+
+  }
 }

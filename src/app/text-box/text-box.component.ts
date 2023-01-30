@@ -7,15 +7,15 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./text-box.component.css']
 })
 export class TextBoxComponent implements OnInit{
-
+  @Output() emit_note: EventEmitter<note> = new EventEmitter();
   temp_note!:note;
   constructor(){
 
     this.temp_note = {heading:"", text:""}
   }
   submit(){
-    console.log(this.temp_note);
-    // this.throw_note.emit(this.temp_note);
+    // console.log(this.temp_note);
+    this.emit_note.emit(this.temp_note);
     this.temp_note = {heading:"", text:""}
   }
 
