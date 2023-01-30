@@ -8,15 +8,14 @@ import { FormsModule } from '@angular/forms';
 })
 export class TextBoxComponent implements OnInit{
   @Output() emit_note: EventEmitter<note> = new EventEmitter();
-  temp_note!:note;
+  temp_note:note = {heading:"", text:""}
   constructor(){
-
-    this.temp_note = {heading:"", text:""}
   }
   submit(){
     // console.log(this.temp_note);
     this.emit_note.emit(this.temp_note);
     this.temp_note = {heading:"", text:""}
+
   }
 
   ngOnInit():void {

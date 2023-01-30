@@ -8,15 +8,32 @@ import { note } from '../note';
 })
 export class SavedNotesComponent implements OnInit{
 
-  @Input() received_array!:note[]
+ @Input() received_array!:note[];
 
+  local !:string|null;
+  constructor(){
+    // this.local = localStorage.getItem("notes");
+    // console.log("heellooo");
+    // console.log(this.local);
+
+    //   this.received_array = JSON.parse(this.local!);
+
+    //     this.local = localStorage.getItem("notes");
+    // if(this.local == null){
+    //   this.received_array = [];
+    // }
+
+    // else {
+    //   this.received_array = JSON.parse(this.local);
+    // }
+  }
   ngOnInit(): void {
-      
+
   }
 
 
-  fake_heading:string = "";
-  fake_text:string = "";
+  fake_heading!:string;
+  fake_text!:string;
 
 
   more_info(Note:note){
