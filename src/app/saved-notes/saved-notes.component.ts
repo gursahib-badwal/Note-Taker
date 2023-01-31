@@ -1,5 +1,7 @@
+import { PopUpComponent } from './../pop-up/pop-up.component';
 import { Component, Input, OnInit } from '@angular/core';
 import { note } from '../note';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-saved-notes',
@@ -11,7 +13,7 @@ export class SavedNotesComponent implements OnInit{
  @Input() received_array!:note[];
 
   local !:string|null;
-  constructor(){
+  constructor(private DialogRef:MatDialog){
     // this.local = localStorage.getItem("notes");
     // console.log("heellooo");
     // console.log(this.local);
@@ -31,14 +33,20 @@ export class SavedNotesComponent implements OnInit{
 
   }
 
-
+  open_dialog(Note:note){
+    this.DialogRef.open(PopUpComponent,{
+      data : Note
+    });
+    
+  }
+  
   fake_heading!:string;
   fake_text!:string;
 
 
-  more_info(Note:note){
-    this.fake_heading = Note.heading;
-    this.fake_text = Note.text;
-  }
+  // more_info(Note:note){
+  //   this.fake_heading = Note.heading;
+  //   this.fake_text = Note.text;
+  // }
 
 }

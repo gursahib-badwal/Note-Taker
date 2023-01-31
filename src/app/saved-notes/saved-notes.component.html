@@ -1,13 +1,18 @@
 <!-- <p>Second component says hi!</p> -->
+<h1>SAVED NOTES:</h1>
 <ul>
     <li *ngFor="let note of received_array">
-        <button btn btn-secondary (click)="more_info(note)">{{note.heading}}</button>
+        <!-- <button btn btn-secondary (click)="more_info(note)">{{note.heading}}</button> -->
+        <button class="btn btn-outline-warning" (click)="open_dialog(note)">{{note.heading}}</button>
     </li>
 </ul>
 
 
 
-<div id="more-info">
+<!-- <div id="more-info">
 <p>Heading: {{fake_heading}}</p>
 <p>Text: {{fake_text}}</p>
-</div>
+</div> -->
+
+
+<!-- <app-pop-up></app-pop-up> -->
